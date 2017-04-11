@@ -1,30 +1,52 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-body{
-  background-color: #69dead;
+html{
   height: 100%;
   margin: 0;
-  min-width: 250px;
-  position: relative;
   padding: 0;
+}
+body{
+  background-color: #69dead;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+h1{
+  font-type: "Geneva", sans-serif;/*immport geneva text*/
+  font-size: 75px;
+  color: white;
+  text-align: center;
+}
+
+td {
+border: 3px solid white;
+height: 150px;
+width: 200px;
+}
+
+.wrapper{
+  min-height: 100%;
+  position: relative;
 }
 
 .author-details{
   background-color:#464d4a;
   margin: none;
   height: 20px;
-  bottom: auto 0;
+  width: 100%;
+  bottom: 0px;
+  position: absolute;
+}
+
+a{
+  color: white;
 }
 
 .container{
   border: 5px solid #ffffff
 }
-
-.row-one, .row-two, .row-three{
-  height: 150px;
-}
-
 
 .social-media{
   background-color:#464d4a;
@@ -33,16 +55,16 @@ body{
   height: 20px;
   float: right;
 }
-
-h5{
+nav{
+  color: white;
+  background-color: #464d4a;
+  height: 20px;
+  text-transform: uppercase;
+}
+.author-details{
   color: white;
   font-style: "Geneva", sans-serif;/*import the geneva text*/
   text-transform: uppercase;
   background-color: #464d4a;
-}
-
-h1{
-  font-size: 75px;
-  color: white;
-  text-align: center;
+  height: 20px;
 }

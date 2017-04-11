@@ -12,38 +12,32 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+    <body>
+      <div class="wrapper">
+        <nav>dis ma nav ba</nav>
           <h1 class="game-board">Tic-Tac-Toe</h1>
-          <div class="container">
-                <div class="row-one">
-                  <div class="col-xs-4 col-lg-4 box" data-id="1">.col-xs-1</div>
-                  <div class="col-xs-4 col-lg-4 box" data-id="2">.col-xs-2</div>
-                  <div class="col-xs-4 col-lg-4 box" data-id="3">.col-xs-3</div>
-                </div>
-
-                <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-                <div class="row-two">
-                  <div class="col-xs-4 col-lg-4 box" data-id="4">.col-xs-.4 .col-md-4</div>
-                  <div class="col-xs-4 col-lg-4 box" data-id="5">.col-xs-.5 .col-md-4</div>
-                  <div class="col-xs-4 col-lg-4 box" data-id="6">.col-xs6</div>
-                </div>
-
-                <!-- Columns start at 50% wide on mobile and bump up to 33.3% 6wide on desktop -->
-                <div class="row-three">
-                  <div class="col-xs-4 col-lg-4 box" data-id="7">.col-xs-7 .col-lg-4</div>
-                  <div class="col-xs-4 col-lg-4 box" data-id="8">.col-xs-8 .col-lg-4</div>
-                  <div class="col-xs-4 col-lg-4 box" data-id="9">.col-xs-9 .col-md-4</div>
-                </div>
-              </div>
-        <footer class="author-details"><h5>by brian kim</h5></footer>
-          <div class="social-media">
+<table class="game-board" align="center">
+    <tr class="row-one">
+        <td data-id="one"></td>
+        <td data-id="two"></td>
+        <td data-id="three"></td>
+    </tr>
+    <tr class="row-two">
+        <td data-id="four"></td>
+        <td data-id="five"></td>
+        <td data-id="six"></td>
+    </tr>
+    <tr class="row-three">
+        <td data-id="seven"></td>
+        <td data-id="eight"></td>
+        <td data-id="nine"></td>
+    </tr>
+</table>
+        <footer class="author-details">By Brian Kim
+          <span class="social-media">
             <a href="#" title="github-profile">Github</a>
             <a href="#" title="linkedin-profile">LinkedIn</a>
-          </div>
-          <div class="progress-bar">
-            <span class="win" title="Wins"><em class="Some win symbol" aria-hidden="true"></em> <span class="count">0</span></span>
-            <span class="lose" title="Losses"><em class="some lose symbol" aria-hidden="true"></em> <span class="count">0</span></span>
-            <span class="tie" title="Tie Games"><em class="some tie symbol" aria-hidden="true"></em> <span class="count">0</span></span>
-          </div>
+          </span>
         </footer>
       </div>
     </body>
