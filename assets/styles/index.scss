@@ -1,2 +1,48 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body{
+  background-color: #69dead;
+  height: 100%;
+  margin: 0;
+  min-width: 250px;
+  position: relative;
+  padding: 0;
+}
+
+.author-details{
+  background-color:#464d4a;
+  margin: none;
+  height: 20px;
+  bottom: auto 0;
+}
+
+.container{
+  border: 5px solid #ffffff
+}
+
+.row-one, .row-two, .row-three{
+  height: 150px;
+}
+
+
+.social-media{
+  background-color:#464d4a;
+  color: white;
+  text-decoration: none;
+  height: 20px;
+  float: right;
+}
+
+h5{
+  color: white;
+  font-style: "Geneva", sans-serif;/*import the geneva text*/
+  text-transform: uppercase;
+  background-color: #464d4a;
+}
+
+h1{
+  font-size: 75px;
+  color: white;
+  text-align: center;
+}
