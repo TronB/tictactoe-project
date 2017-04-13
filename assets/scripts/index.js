@@ -6,24 +6,52 @@ const config = require('./config')
 $(() => {
   setAPIOrigin(location, config)
 })
-const gameBoard = []
-let turnCount = 1
-$(document).ready(function () {
+let gameBoard = []
 
+$(document).ready(function () {
+  let turnCount = 1
   const onClickCell = function (evt) {
     // saves the position on the board that was clicked
     const positionOnBoard = $(evt.target).data('id') // 1 or 2, etc
 
-    // assigns an x or o based on the turn
-    if (turnCount % 2 === 1 && typeof gameBoard[positionOnBoard] !== 'string'){
+    // assigns an x or o based on the turn and only if cell isn't occupied
+    if (turnCount % 2 === 1 && typeof gameBoard[positionOnBoard] !== 'string') {
       gameBoard[positionOnBoard] = 'x'
+      console.log(gameBoard)
       turnCount++
     }
     else if (turnCount % 2 === 0 && typeof gameBoard[positionOnBoard] !== 'string') {
       gameBoard[positionOnBoard] = 'o'
+      console.log(gameBoard)
       turnCount++
     }
+    function winCondition () {
+      // checks to see if the top row isn't blank(if this isn't added it conflicts with checking the other rows)
+      if (gameBoard[0] && gameBoard[1] && gameBoard[2] !== '') {
+        // checks if top row all match
+        if (gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2]) {
+          console.log('top row')
+          // remove the invisibility of the New Game button
+          $('#newGame').removeClass('invisible')
+// hide the gameBoard
+          $('.game-board td').hide()
+          // click on newgame button to show the gameboard
+          $('#newGame').on('click', function () {
+            $('.game-board td').show()
+          // then hide the newGame button
+            $('#newGame').hide()
+          // empties content of the table
+            $('.game-board td').empty()
+          // empties content of array
+            gameBoard = []
+      //   console.log(gameBoard)
+          })
+      //  $('.game-board td').off('click', onClickCell)
+        }
+      }
+    }
 
+    winCondition()
     // add x or o to the position on the board
     $(evt.target).text(gameBoard[positionOnBoard])
 
@@ -36,12 +64,13 @@ $(document).ready(function () {
     // else {
     //   return false
     // }
-    debugger;
+  // debugger
   }
 
+  // win combination logic
+ // doesn't work, maybe browser is recognizing every array as blank so it's being alerted?
+ // are the clicked cells not storing any string values?
   $('.game-board td').on('click', onClickCell)
-
-  console.log('what')
 })
 
 
