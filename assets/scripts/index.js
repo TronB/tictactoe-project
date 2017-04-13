@@ -7,7 +7,7 @@ $(() => {
   setAPIOrigin(location, config)
 })
 let gameBoard = []
-
+$('#newGame').hide()
 $(document).ready(function () {
   let turnCount = 1
   const onClickCell = function (evt) {
@@ -31,22 +31,21 @@ $(document).ready(function () {
         // checks if top row all match
         if (gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2]) {
           console.log('top row')
-          // remove the invisibility of the New Game button
-          $('#newGame').removeClass('invisible')
+          $('#newGame').show()
 // hide the gameBoard
           $('.game-board td').hide()
           // click on newgame button to show the gameboard
           $('#newGame').on('click', function () {
             $('.game-board td').show()
-          // then hide the newGame button
-            $('#newGame').hide()
           // empties content of the table
             $('.game-board td').empty()
           // empties content of array
             gameBoard = []
-      //   console.log(gameBoard)
+            $('#newGame').hide()
+
+        // console.log(gameBoard)
           })
-      //  $('.game-board td').off('click', onClickCell)
+      //    $('.game-board td').off('click', onClickCell)
         }
       }
     }
