@@ -8,6 +8,17 @@ $(() => {
 })
 let gameBoard = []
 $('#newGame').hide()
+const newGameLoop = function () {
+  $('.game-board td').show()
+// empties content of the table
+  $('.game-board td').empty()
+// empties content of array
+  gameBoard = []
+  $('#newGame').hide()
+
+// console.log(gameBoard)
+}
+
 $(document).ready(function () {
   let turnCount = 1
   const onClickCell = function (evt) {
@@ -35,16 +46,91 @@ $(document).ready(function () {
 // hide the gameBoard
           $('.game-board td').hide()
           // click on newgame button to show the gameboard
-          $('#newGame').on('click', function () {
-            $('.game-board td').show()
-          // empties content of the table
-            $('.game-board td').empty()
-          // empties content of array
-            gameBoard = []
-            $('#newGame').hide()
-
-        // console.log(gameBoard)
-          })
+          $('#newGame').on('click', newGameLoop)
+      //    $('.game-board td').off('click', onClickCell)
+        }
+      }
+      if (gameBoard[3] && gameBoard[4] && gameBoard[5] !== '') {
+        // checks if top row all match
+        if (gameBoard[3] === gameBoard[4] && gameBoard[4] === gameBoard[5]) {
+          console.log('mid row')
+          $('#newGame').show()
+// hide the gameBoard
+          $('.game-board td').hide()
+          // click on newgame button to show the gameboard
+          $('#newGame').on('click', newGameLoop)
+      //    $('.game-board td').off('click', onClickCell)
+        }
+      }
+      if (gameBoard[6] && gameBoard[7] && gameBoard[8] !== '') {
+        // checks if top row all match
+        if (gameBoard[6] === gameBoard[7] && gameBoard[7] === gameBoard[8]) {
+          console.log('bottom row')
+          $('#newGame').show()
+// hide the gameBoard
+          $('.game-board td').hide()
+          // click on newgame button to show the gameboard
+          $('#newGame').on('click', newGameLoop)
+      //    $('.game-board td').off('click', onClickCell)
+        }
+      }
+      if (gameBoard[0] && gameBoard[3] && gameBoard[6] !== '') {
+        // checks if top row all match
+        if (gameBoard[0] === gameBoard[3] && gameBoard[3] === gameBoard[6]) {
+          console.log('left column')
+          $('#newGame').show()
+// hide the gameBoard
+          $('.game-board td').hide()
+          // click on newgame button to show the gameboard
+          $('#newGame').on('click', newGameLoop)
+      //    $('.game-board td').off('click', onClickCell)
+        }
+      }
+      if (gameBoard[1] && gameBoard[4] && gameBoard[7] !== '') {
+        // checks if top row all match
+        if (gameBoard[1] === gameBoard[4] && gameBoard[4] === gameBoard[7]) {
+          console.log('mid column')
+          $('#newGame').show()
+// hide the gameBoard
+          $('.game-board td').hide()
+          // click on newgame button to show the gameboard
+          $('#newGame').on('click', newGameLoop)
+      //    $('.game-board td').off('click', onClickCell)
+        }
+      }
+      if (gameBoard[2] && gameBoard[5] && gameBoard[8] !== '') {
+        // checks if top row all match
+        if (gameBoard[2] === gameBoard[5] && gameBoard[5] === gameBoard[8]) {
+          console.log('right column')
+          $('#newGame').show()
+// hide the gameBoard
+          $('.game-board td').hide()
+          // click on newgame button to show the gameboard
+          $('#newGame').on('click', newGameLoop)
+      //    $('.game-board td').off('click', onClickCell)
+        }
+      }
+      if (gameBoard[0] && gameBoard[4] && gameBoard[8] !== '') {
+        // checks if top row all match
+        if (gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8]) {
+          console.log('back slash')
+          $('#newGame').show()
+// hide the gameBoard
+          $('.game-board td').hide()
+          // click on newgame button to show the gameboard
+          $('#newGame').on('click', newGameLoop)
+      //    $('.game-board td').off('click', onClickCell)
+        }
+      }
+      if (gameBoard[2] && gameBoard[4] && gameBoard[6] !== '') {
+        // checks if top row all match
+        if (gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6]) {
+          console.log('forward slash')
+          $('#newGame').show()
+// hide the gameBoard
+          $('.game-board td').hide()
+          // click on newgame button to show the gameboard
+          $('#newGame').on('click', newGameLoop)
       //    $('.game-board td').off('click', onClickCell)
         }
       }
