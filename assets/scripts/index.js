@@ -8,7 +8,6 @@ $(() => {
 })
 let turnCount = 1
 let gameBoard = []
-let currentPlayer = 'x'
 $('#newGame').hide()
 const newGameLoop = function () {
   $('.game-board td').show()
@@ -19,10 +18,7 @@ const newGameLoop = function () {
   $('#newGame').hide()
 // console.log(gameBoard)
 }
-
-
 $(document).ready(function () {
-
   const onClickCell = function (evt) {
     // saves the position on the board that was clicked
     const positionOnBoard = $(evt.target).data('id') // 1 or 2, etc
@@ -32,8 +28,7 @@ $(document).ready(function () {
       gameBoard[positionOnBoard] = 'x'
     //  console.log(gameBoard)
       turnCount++
-    }
-    else if (turnCount % 2 === 0 && typeof gameBoard[positionOnBoard] !== 'string') {
+    } else if (turnCount % 2 === 0 && typeof gameBoard[positionOnBoard] !== 'string') {
       gameBoard[positionOnBoard] = 'o'
     //  console.log(gameBoard)
       turnCount++
@@ -50,9 +45,9 @@ $(document).ready(function () {
           // click on newgame button to show the gameboard
           $('#newGame').on('click', newGameLoop)
       //    $('.game-board td').off('click', onClickCell)
-        if (gameBoard[0] && gameBoard[1] && gameBoard[2] === 'x'){
-          $('.winAlert').text('Player X Wins!')}
-          else if (gameBoard[0] && gameBoard[1] && gameBoard[2] === 'o'){
+          if (gameBoard[0] && gameBoard[1] && gameBoard[2] === 'x') {
+            $('.winAlert').text('Player X Wins!')
+          } else if (gameBoard[0] && gameBoard[1] && gameBoard[2] === 'o') {
             $('.winAlert').text('Player O Wins!')
           }
         }
@@ -67,11 +62,11 @@ $(document).ready(function () {
           // click on newgame button to show the gameboard
           $('#newGame').on('click', newGameLoop)
       //    $('.game-board td').off('click', onClickCell)
-      if (gameBoard[3] && gameBoard[4] && gameBoard[5] === 'x'){
-        $('.winAlert').text('Player X Wins!')}
-        else if (gameBoard[3] && gameBoard[4] && gameBoard[5] === 'o'){
-          $('.winAlert').text('Player O Wins!')
-        }
+          if (gameBoard[3] && gameBoard[4] && gameBoard[5] === 'x') {
+            $('.winAlert').text('Player X Wins!')
+          } else if (gameBoard[3] && gameBoard[4] && gameBoard[5] === 'o') {
+            $('.winAlert').text('Player O Wins!')
+          }
         }
       }
       if (gameBoard[6] && gameBoard[7] && gameBoard[8] !== '') {
@@ -84,11 +79,11 @@ $(document).ready(function () {
           // click on newgame button to show the gameboard
           $('#newGame').on('click', newGameLoop)
       //    $('.game-board td').off('click', onClickCell)
-      if (gameBoard[6] && gameBoard[7] && gameBoard[8] === 'x'){
-        $('.winAlert').text('Player X Wins!')}
-        else if (gameBoard[6] && gameBoard[7] && gameBoard[8] === 'o'){
-          $('.winAlert').text('Player O Wins!')
-        }
+          if (gameBoard[6] && gameBoard[7] && gameBoard[8] === 'x') {
+            $('.winAlert').text('Player X Wins!')
+          } else if (gameBoard[6] && gameBoard[7] && gameBoard[8] === 'o') {
+            $('.winAlert').text('Player O Wins!')
+          }
         }
       }
       if (gameBoard[0] && gameBoard[3] && gameBoard[6] !== '') {
@@ -101,11 +96,11 @@ $(document).ready(function () {
           // click on newgame button to show the gameboard
           $('#newGame').on('click', newGameLoop)
       //    $('.game-board td').off('click', onClickCell)
-      if (gameBoard[0] && gameBoard[3] && gameBoard[6] === 'x'){
-        $('.winAlert').text('Player X Wins!')}
-        else if (gameBoard[0] && gameBoard[3] && gameBoard[6] === 'o'){
-          $('.winAlert').text('Player O Wins!')
-        }
+          if (gameBoard[0] && gameBoard[3] && gameBoard[6] === 'x') {
+            $('.winAlert').text('Player X Wins!')
+          } else if (gameBoard[0] && gameBoard[3] && gameBoard[6] === 'o') {
+            $('.winAlert').text('Player O Wins!')
+          }
         }
       }
       if (gameBoard[1] && gameBoard[4] && gameBoard[7] !== '') {
@@ -118,11 +113,11 @@ $(document).ready(function () {
           // click on newgame button to show the gameboard
           $('#newGame').on('click', newGameLoop)
       //    $('.game-board td').off('click', onClickCell)
-      if (gameBoard[1] && gameBoard[4] && gameBoard[7] === 'x'){
-        $('.winAlert').text('Player X Wins!')}
-        else if (gameBoard[4] && gameBoard[1] && gameBoard[7] === 'o'){
-          $('.winAlert').text('Player O Wins!')
-        }
+          if (gameBoard[1] && gameBoard[4] && gameBoard[7] === 'x') {
+            $('.winAlert').text('Player X Wins!')
+          } else if (gameBoard[4] && gameBoard[1] && gameBoard[7] === 'o') {
+            $('.winAlert').text('Player O Wins!')
+          }
         }
       }
       if (gameBoard[2] && gameBoard[5] && gameBoard[8] !== '') {
@@ -175,6 +170,14 @@ $(document).ready(function () {
             }
       //    $('.game-board td').off('click', onClickCell)
         }
+      }
+      if(gameBoard[0] && gameBoard[1] && gameBoard[2] && gameBoard[3] && gameBoard[4] && gameBoard[5] && gameBoard[6] && gameBoard[7] && gameBoard[8] !== ''){
+        $('.winAlert').text('Draw')
+        $('#newGame').show()
+// hide the gameBoard
+        $('.game-board td').hide()
+        // click on newgame button to show the gameboard
+        $('#newGame').on('click', newGameLoop)
       }
     }
     winCondition()
