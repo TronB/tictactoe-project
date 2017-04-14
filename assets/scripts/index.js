@@ -16,7 +16,6 @@ const newGameLoop = function () {
 // empties content of array
   gameBoard = []
   $('#newGame').hide()
-// console.log(gameBoard)
 }
 $(document).ready(function () {
   const onClickCell = function (evt) {
@@ -157,7 +156,6 @@ $(document).ready(function () {
       if (gameBoard[2] && gameBoard[4] && gameBoard[6] !== '') {
         // checks if left diagonal all match
         if (gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6]) {
-      //    console.log('forward slash')
           $('#newGame').show()
 // hide the gameBoard
           $('.game-board td').hide()
@@ -168,7 +166,6 @@ $(document).ready(function () {
             else if (gameBoard[2] && gameBoard[4] && gameBoard[6] === 'o'){
               $('.winAlert').text('Player O Wins!')
             }
-      //    $('.game-board td').off('click', onClickCell)
         }
       }
       if(gameBoard[0] && gameBoard[1] && gameBoard[2] && gameBoard[3] && gameBoard[4] && gameBoard[5] && gameBoard[6] && gameBoard[7] && gameBoard[8] !== ''){
@@ -184,21 +181,9 @@ $(document).ready(function () {
     // add x or o to the position on the board
     $(evt.target).text(gameBoard[positionOnBoard])
 
-    // increment turnCount
-    // turnCount++
-
-    // if (typeof sqNum !== 'string') {
-    //   const player1 = 'X'
-    //   return player1}
-    // else {
-    //   return false
-    // }
   // debugger
   }
 
-  // win combination logic
- // doesn't work, maybe browser is recognizing every array as blank so it's being alerted?
- // are the clicked cells not storing any string values?
   $('.game-board td').on('click', onClickCell)
 })
 
