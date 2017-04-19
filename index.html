@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="/assets/styles/index.scss">
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -14,8 +15,27 @@
     </head>
     <body>
       <div class="wrapper">
-        <nav></nav>
+      <br />
+        <form id="sign-up">
+        <fieldset>
+          <legend>Sign Up!</legend>
+          <input type="text" name="credentials[email]" placeholder="email">
+          <input type="password" name="credentials[password]" placeholder="password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+          <input type="submit" name="submit" value="Sign Up!">
+        </fieldset>
+      </form>
+      <form id="sign-in">
+  <fieldset>
+    <legend>Sign in!</legend>
+    <input type="text" name="credentials[email]" value="" placeholder="email">
+    <input type="password" name="credentials[password]" value="" placeholder="password">
+    <input type="submit" name="submit" value="Sign in!">
+  </fieldset>
+</form>
+      <p class="messages"></p>
           <h1 class="game-board">Tic-Tac-Toe</h1>
+
 <table class="game-board" align="center">
     <tr class="row-one">
         <td data-id="0"></td>
@@ -37,59 +57,8 @@
 <div style="text-align:center;"><button  id="newGame">New game!</button></div>
 
 <div class="auth-forms">
-    <div>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Sign up
-</button>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
-      </div>
-      <div class="modal-body">
-<input placeholder="E-mail">
-<input placeholder="Password">
-<input placeholder="Confirm Password">
-<button type="submit">Sign up</button>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 
-<div>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myLogin">
-Login
-</button>
-<div class="modal fade" id="myLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h4 class="modal-title" id="myModalLabel">Login</h4>
-  </div>
-  <div class="modal-body">
-<input placeholder="E-mail">
-<input placeholder="Password">
-<button type="submit">Login</button>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-    <button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
-  </div>
-</div>
-</div>
-</div>
-
-</div>
-<br />
-        <footer class="author-details">By Brian Kim
+      <footer class="author-details">By Brian Kim
           <span class="social-media">
             <a href="#" title="github-profile">Github</a>
             <a href="#" title="linkedin-profile">LinkedIn</a>

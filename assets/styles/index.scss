@@ -14,7 +14,7 @@ body{
 }
 
 h1{
-  font-type: "Geneva", sans-serif;/*immport geneva text*/
+  font-family: 'PT Sans', sans-serif;
   font-size: 75px;
   color: white;
   text-align: center;
@@ -38,6 +38,11 @@ width: 200px;
   width: 100%;
   bottom: 0px;
   position: absolute;
+}
+
+.messages{
+  color: white;
+  font-type: bold;
 }
 
 a{

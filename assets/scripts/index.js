@@ -2,18 +2,20 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-
+const events = require('./auth/events')
 $(() => {
   setAPIOrigin(location, config)
+  events.addHandlers()
 })
+
 let turnCount = 1
 let gameBoard = []
 $('#newGame').hide()
 const newGameLoop = function () {
   $('.game-board td').show()
-// empties content of the table
+  // empties content of the table
   $('.game-board td').empty()
-// empties content of array
+  // empties content of array
   gameBoard = []
   $('#newGame').hide()
 }
@@ -39,11 +41,11 @@ $(document).ready(function () {
         // checks if top row all match
         if (gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2]) {
           $('#newGame').show()
-// hide the gameBoard
+          // hide the gameBoard
           $('.game-board td').hide()
           // click on newgame button to show the gameboard
           $('#newGame').on('click', newGameLoop)
-      //    $('.game-board td').off('click', onClickCell)
+          //    $('.game-board td').off('click', onClickCell)
           if (gameBoard[0] && gameBoard[1] && gameBoard[2] === 'x') {
             $('.winAlert').text('Player X Wins!')
           } else if (gameBoard[0] && gameBoard[1] && gameBoard[2] === 'o') {
@@ -56,11 +58,11 @@ $(document).ready(function () {
         if (gameBoard[3] === gameBoard[4] && gameBoard[4] === gameBoard[5]) {
       //    console.log('mid row')
           $('#newGame').show()
-// hide the gameBoard
+          // hide the gameBoard
           $('.game-board td').hide()
           // click on newgame button to show the gameboard
           $('#newGame').on('click', newGameLoop)
-      //    $('.game-board td').off('click', onClickCell)
+          //    $('.game-board td').off('click', onClickCell)
           if (gameBoard[3] && gameBoard[4] && gameBoard[5] === 'x') {
             $('.winAlert').text('Player X Wins!')
           } else if (gameBoard[3] && gameBoard[4] && gameBoard[5] === 'o') {
@@ -73,11 +75,11 @@ $(document).ready(function () {
         if (gameBoard[6] === gameBoard[7] && gameBoard[7] === gameBoard[8]) {
       //    console.log('bottom row')
           $('#newGame').show()
-// hide the gameBoard
+          // hide the gameBoard
           $('.game-board td').hide()
           // click on newgame button to show the gameboard
           $('#newGame').on('click', newGameLoop)
-      //    $('.game-board td').off('click', onClickCell)
+          //    $('.game-board td').off('click', onClickCell)
           if (gameBoard[6] && gameBoard[7] && gameBoard[8] === 'x') {
             $('.winAlert').text('Player X Wins!')
           } else if (gameBoard[6] && gameBoard[7] && gameBoard[8] === 'o') {
@@ -90,11 +92,11 @@ $(document).ready(function () {
         if (gameBoard[0] === gameBoard[3] && gameBoard[3] === gameBoard[6]) {
       //    console.log('left column')
           $('#newGame').show()
-// hide the gameBoard
+          // hide the gameBoard
           $('.game-board td').hide()
           // click on newgame button to show the gameboard
           $('#newGame').on('click', newGameLoop)
-      //    $('.game-board td').off('click', onClickCell)
+          //    $('.game-board td').off('click', onClickCell)
           if (gameBoard[0] && gameBoard[3] && gameBoard[6] === 'x') {
             $('.winAlert').text('Player X Wins!')
           } else if (gameBoard[0] && gameBoard[3] && gameBoard[6] === 'o') {
@@ -107,11 +109,11 @@ $(document).ready(function () {
         if (gameBoard[1] === gameBoard[4] && gameBoard[4] === gameBoard[7]) {
       //    console.log('mid column')
           $('#newGame').show()
-// hide the gameBoard
+          // hide the gameBoard
           $('.game-board td').hide()
           // click on newgame button to show the gameboard
           $('#newGame').on('click', newGameLoop)
-      //    $('.game-board td').off('click', onClickCell)
+          //    $('.game-board td').off('click', onClickCell)
           if (gameBoard[1] && gameBoard[4] && gameBoard[7] === 'x') {
             $('.winAlert').text('Player X Wins!')
           } else if (gameBoard[4] && gameBoard[1] && gameBoard[7] === 'o') {
@@ -124,7 +126,7 @@ $(document).ready(function () {
         if (gameBoard[2] === gameBoard[5] && gameBoard[5] === gameBoard[8]) {
       //    console.log('right column')
           $('#newGame').show()
-// hide the gameBoard
+          // hide the gameBoard
           $('.game-board td').hide()
           // click on newgame button to show the gameboard
           $('#newGame').on('click', newGameLoop)
@@ -133,7 +135,7 @@ $(document).ready(function () {
             else if (gameBoard[2] && gameBoard[5] && gameBoard[8] === 'o'){
               $('.winAlert').text('Player O Wins!')
             }
-      //    $('.game-board td').off('click', onClickCell)
+            //    $('.game-board td').off('click', onClickCell)
         }
       }
       if (gameBoard[0] && gameBoard[4] && gameBoard[8] !== '') {
@@ -141,7 +143,7 @@ $(document).ready(function () {
         if (gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8]) {
       //    console.log('back slash')
           $('#newGame').show()
-// hide the gameBoard
+          // hide the gameBoard
           $('.game-board td').hide()
           // click on newgame button to show the gameboard
           $('#newGame').on('click', newGameLoop)
@@ -150,14 +152,14 @@ $(document).ready(function () {
             else if (gameBoard[0] && gameBoard[4] && gameBoard[8] === 'o'){
               $('.winAlert').text('Player O Wins!')
             }
-      //    $('.game-board td').off('click', onClickCell)
+            //    $('.game-board td').off('click', onClickCell)
         }
       }
       if (gameBoard[2] && gameBoard[4] && gameBoard[6] !== '') {
         // checks if left diagonal all match
         if (gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6]) {
           $('#newGame').show()
-// hide the gameBoard
+          // hide the gameBoard
           $('.game-board td').hide()
           // click on newgame button to show the gameboard
           $('#newGame').on('click', newGameLoop)
@@ -171,7 +173,7 @@ $(document).ready(function () {
       if(gameBoard[0] && gameBoard[1] && gameBoard[2] && gameBoard[3] && gameBoard[4] && gameBoard[5] && gameBoard[6] && gameBoard[7] && gameBoard[8] !== ''){
         $('.winAlert').text('Draw')
         $('#newGame').show()
-// hide the gameBoard
+        // hide the gameBoard
         $('.game-board td').hide()
         // click on newgame button to show the gameboard
         $('#newGame').on('click', newGameLoop)
@@ -183,7 +185,6 @@ $(document).ready(function () {
 
   // debugger
   }
-
   $('.game-board td').on('click', onClickCell)
 })
 
