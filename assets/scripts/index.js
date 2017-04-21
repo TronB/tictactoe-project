@@ -5,6 +5,7 @@ const config = require('./config')
 const events = require('./auth/events')
 $(() => {
   setAPIOrigin(location, config)
+  console.log(events)
   events.addHandlers()
 })
 
