@@ -1,7 +1,6 @@
 // not sure if this is thought out right, or even needed
-const getGames = (data) => {
+const onCreateGameSuccess = () => {
   // some kind of syntax to get game by the id
-
 }
 
 const gameHistory = () => {

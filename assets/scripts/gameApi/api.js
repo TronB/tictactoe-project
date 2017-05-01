@@ -12,27 +12,31 @@ const createGame = () => {
   })
 }
 
-const updateGame = (data) => {
-  console.log(data)
-  store.user = data.user
+const updateGame = (index, value, over) => {
   return $.ajax({
     url: config.apiOrigin + '/games/:id',
-    method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data
+    data: {
+      'game': {
+        'cell': {
+          'index': index,
+          'value': value
+        },
+        'over': over
+      }
+    }
   })
 }
 
-const getGames = (data) => {
+const getGames = function () {
   return $.ajax({
-    url: config.apiOrigin + '/games/:id',
+    url: config.apiOrigin + 'games/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data
+    }
   })
 }
 

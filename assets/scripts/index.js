@@ -3,6 +3,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const events = require('./auth/events')
+const gameApi = require('./gameApi/api')
 $(() => {
   setAPIOrigin(location, config)
   console.log(events)
@@ -171,7 +172,7 @@ $(document).ready(function () {
             }
         }
       }
-      if(gameBoard[0] && gameBoard[1] && gameBoard[2] && gameBoard[3] && gameBoard[4] && gameBoard[5] && gameBoard[6] && gameBoard[7] && gameBoard[8] !== ''){
+      if (gameBoard[0] && gameBoard[1] && gameBoard[2] && gameBoard[3] && gameBoard[4] && gameBoard[5] && gameBoard[6] && gameBoard[7] && gameBoard[8] !== ''){
         $('.winAlert').text('Draw')
         $('#newGame').show()
         // hide the gameBoard
@@ -186,7 +187,16 @@ $(document).ready(function () {
 
   // debugger
   }
-  $('.game-board td').on('click', onClickCell)
+  // MAKE API CALL TO CREATE NEW GAME and on SUCCESS then run this
+  gameApi.createGame(event)
+  // WHEN API CALL SUCCESSFUL
+  .then(() => {
+    console.log('test')
+    $('.game-board td').on('click', onClickCell)
+  })
+  // WHEN API CALL UNSUCCESSFUL
+  .catch()
+
 })
 
 // use require with a reference to bundle the file and use it in this file
