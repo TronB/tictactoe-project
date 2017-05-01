@@ -10,3 +10,5 @@ The main problems I ran into while building the game engine was the syntax. I wa
 Some other minor issues were events not working as expected, but I'm pretty sure a lot of those problems could've been solved with using functions instead of typing out each line.
 
 In terms of solving these issues, it was mostly done by just playing around with atom. Some parts I understood why and most of it I didn't; I was just glad it even worked at all.
+
+When working on the game api, I realized I made a huge mistake. I didn't organize my code as well as I should have(mostly due to my lack of understanding the different funcationalities of each code) and hit a wall when trying to implement the game api. The other mistake I made was overlapping the game api and game engine funcationalities. I mininterpreted the requirements of the project and used conditionals instead of Ajax to create, and update the boardgame. I tried to look into manipulating the game engine and api, but struggled to do so because there were some lines of code which I didn't understand.  
