@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic-Tac-Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="/assets/styles/index.scss">
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <div class="wrapper">
+      <br />
+        <form id="sign-up">
+        <fieldset>
+          <legend>Sign Up!</legend>
+          <input type="text" name="credentials[email]" placeholder="email">
+          <input type="password" name="credentials[password]" placeholder="password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+          <input type="submit" name="submit" value="Sign Up!">
+        </fieldset>
+      </form>
+      <form class="#" id="sign-in">
+  <fieldset>
+    <legend>Sign in!</legend>
+    <input type="text" name="credentials[email]" value="" placeholder="email">
+    <input type="password" name="credentials[password]" value="" placeholder="password">
+    <input type="submit" name="submit" value="Sign in!">
+  </fieldset>
+</form>
+      <form class="hidden" id="change-password">
+        <fieldset>
+          <legend>Change Password</legend>
+          <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+          <input type="password" name="passwords[new]" value="" placeholder="New Password">
+          <input type="submit" name="submit" value="Change Password">
+        </fieldset>
+      </form>
+      <form class ="hidden" id="sign-out">
+        <fieldset>
+          <legend>Sign out!</legend>
+          <input type="submit" name="submit" value="Sign out!">
+        </fieldset>
+      </form>
+      <p class="messages"></p>
+          <h1 class="game-board">Tic-Tac-Toe</h1>
+
+<table class="game-board" align="center">
+    <tr class="row-one">
+        <td data-id="0"></td>
+        <td data-id="1"></td>
+        <td data-id="2"></td>
+    </tr>
+    <tr class="row-two">
+        <td data-id="3"></td>
+        <td data-id="4"></td>
+        <td data-id="5"></td>
+    </tr>
+    <tr class="row-three">
+        <td data-id="6"></td>
+        <td data-id="7"></td>
+        <td data-id="8"></td>
+    </tr>
+</table>
+<div style="text-align: center;" class="winAlert"></div>
+<div style="text-align:center;"><button id="newGame">New game!</button></div>
+
+  <!-- <form>
+    <p class="games-counter"></p>
+  <input name="game[cell][index]" type="text" value="0">
+  <input name="game[cell][value]" type="text" value="x">
+  <input name="game[over]" type="text" value="false">
+</form> -->
+<br />
+      <footer class="author-details">By Brian Kim
+          <span class="social-media">
+            <a href="#" title="github-profile">Github</a>
+            <a href="#" title="linkedin-profile">LinkedIn</a>
+          </span>
+        </footer>
+    </body>
+</html>
